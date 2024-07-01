@@ -1,0 +1,36 @@
+/* navbar css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    display: flex;
+    background-color: red;
+}
+
+#leftSection {
+    flex-basis: 20%;
+    background-color: yellow;
+}
+
+#middleSection {
+    flex-basis: 60%;
+    background-color: green;
+}
+
+#rightSection {
+    flex-basis: 20%;
+    background-color: blue;
+}
+
+/* li 태그 점 없애기 및 정렬 */
+#middleSection ul, #rightSection ul {
+    list-style: none;
+    display: flex;
+}
+
+/* li 안에 a 태그 스타일 */
+a {
+    text-decoration: none;
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promotion Site</title>
+    <link rel="stylesheet" href="/css/common/main.css">
 </head>
 <body>
-    메인 페이지입니다.
+    <!-- 네브바 조각으로 만들어서 가져올 것 -->
+    <th:block th:replace="~{common/navbar}"></th:block>
 </body>
 </html>
