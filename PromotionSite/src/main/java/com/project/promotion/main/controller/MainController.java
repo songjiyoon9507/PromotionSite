@@ -9,5 +9,6 @@ public class MainController {
 	@RequestMapping("/")
 	public String main() {
 		return "common/main";
+		// 메인 페이지로 이동
 	}
 }
