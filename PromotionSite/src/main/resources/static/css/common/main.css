@@ -21,7 +21,7 @@ body {
 
 #rightSection {
     flex-basis: 20%;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 /* li 태그 점 없애기 및 정렬 */
