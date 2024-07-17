@@ -95,6 +95,13 @@ memberEmail.addEventListener("input", e => {
         // count : 1 혹은 0
         // 1이면 중복, 0이면 중복 아님
         if(count == 1) { // 중복 O
+
+            // 탈퇴한 회원이면 회원 복구하기 버튼 보여주고
+            // 버튼 클릭 시 인증번호 받기
+
+            
+
+
             emailMessage.innerText = "이미 사용중인 이메일 입니다.";
             emailMessage.classList.add('error');
             emailMessage.classList.remove('confirm');
@@ -139,7 +146,7 @@ sendAuthKeyBtn.addEventListener("click", () => {
     // *********************************************************
     // 비동기로 서버에서 메일보내기
 
-    fetch("/email/signup", {
+    fetch("/email/signUp", {
         method : "POST",
         headers : {"Content-Type" : "application/json"},
         body : memberEmail.value
