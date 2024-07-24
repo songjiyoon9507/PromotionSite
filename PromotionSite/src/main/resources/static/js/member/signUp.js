@@ -95,18 +95,25 @@ memberEmail.addEventListener("input", e => {
         // count : 1 혹은 0
         // 1이면 중복, 0이면 중복 아님
         if(count == 1) { // 중복 O
-
-            // 탈퇴한 회원이면 회원 복구하기 버튼 보여주고
-            // 버튼 클릭 시 인증번호 받기
-
-            
-
-
             emailMessage.innerText = "이미 사용중인 이메일 입니다.";
             emailMessage.classList.add('error');
             emailMessage.classList.remove('confirm');
             checkObj.memberEmail = false; // 중복은 유효하지 않음
             return;
+        } else if(count == 2) {
+            // 탈퇴한 회원 중 중복된 이메일 존재할 경우
+            // 회원 복구
+            if(confirm("탈퇴한 이메일 입니다. 회원 복구 하시겠습니까?")) {
+                // 확인 버튼 클릭 시 새로운 비밀번호 입력 창으로 이동
+                location.href = "/member/recoverEmail?memberEmail=" + inputEmail;
+            }
+
+
+
+
+
+
+            
         }
 
         // 중복 X 경우

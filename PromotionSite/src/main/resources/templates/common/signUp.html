@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/css/member/signUp.css">
 </head>
 <body>
+
+    <!-- 네브바 조각으로 만들어서 가져올 것 -->
+    <th:block th:replace="~{common/navbar}"></th:block>
+
     <!-- 회원 가입 제목 -->
     <div id="signUpTitle">
         <h1>회원 가입</h1>
@@ -15,7 +19,7 @@
     <!-- 회원 가입 작성 폼 -->
     <section class="signUp-content">
 
-      <form action="/member/signup" method="POST" name="signUpForm" id="signUpForm">
+      <form action="/member/signUp" method="POST" name="signUpForm" id="signUpForm">
   
         <!-- 이메일 입력 -->
         <label for="memberEmail">
@@ -86,6 +90,8 @@
         </div>
 
         <span class="signUp-message" id="telMessage">전화번호를 입력해주세요.(- 제외)</span>
+
+        <button id="signUpBtn">가입하기</button>
       </form>
     </section>
     <script src="/js/member/signUp.js"></script>

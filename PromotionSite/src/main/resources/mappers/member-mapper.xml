@@ -7,6 +7,30 @@
 		SELECT COUNT(*)
 		FROM MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEM_DEL_FL = 'N'
 	</select>
+	
+	<!-- 회원가입 시 이메일 중복 검사 (탈퇴한 회원 중) -->
+	<select id="checkDelEmail">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEM_DEL_FL = 'Y'
+	</select>
+	
+	<!-- 회원 가입 -->
+	<insert id="signUp">
+		INSERT INTO "MEMBER"
+		VALUES(SEQ_MEMBER_NO.NEXTVAL,
+			#{memberEmail},
+			#{memberPw},
+			#{memberNickname},
+			#{memberTel},
+			NULL,
+			DEFAULT,
+			DEFAULT,
+			DEFAULT
+		)
+	</insert>
 
 </mapper>
