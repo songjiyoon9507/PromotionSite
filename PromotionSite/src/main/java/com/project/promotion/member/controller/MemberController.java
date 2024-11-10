@@ -11,6 +11,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.project.promotion.member.model.dto.Member;
 import com.project.promotion.member.model.service.MemberService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -79,5 +81,30 @@ public class MemberController {
 		
 		return "redirect:" + path;
 		
+	}
+	
+	/** 로그인 페이지 이동 및 이전 페이지 저장
+	 * @param inputMember(이메일, 패스워드)
+	 * @param ra
+	 * @return
+	 */
+	@GetMapping("login")
+	public String showLoginPage(HttpServletRequest req,
+			HttpSession session) {
+		// 클라이언트 요청 시 req 의 header 에서 "Referer" 가져오기 (머물렀던 페이지의 URL)
+		String refererUrl = req.getHeader("Referer");
+		// session scope 에 이전 페이지를 담아줌.
+		session.setAttribute("refererUrl", refererUrl);
+		return "member/login";
+	}
+	
+	@PostMapping("login")
+	public String signIn(Member inputMember) {
+		
+		// 서비스 호출해서 memberEmail, memberPw 확인 후 일치할 경우 session 에 실어주기
+		// 원래 있던 URL 로 redirect
+		// 일치하지 않을 경우 메인화면으로 돌아갈 것인지 로그인 화면에 남을 것인지
+		
+		return "";
 	}
 }

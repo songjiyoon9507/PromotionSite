@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+<body>
+    <form action="/member/login" method="POST" id="loginForm">
+        <div>
+            <p>아이디 : </p>
+            <input type="text" name="memberEmail" placeholder="Example@email.com">
+        </div>
+        <div>
+            <p>비밀번호 : </p>
+            <input type="password" name="memberPw">
+        </div>
+        <button>로그인</button>
+    </form>
+</body>
+</html>
